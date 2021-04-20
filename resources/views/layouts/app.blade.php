@@ -31,21 +31,70 @@
                     {{-- right side --}}
                     <div class="w-1/4 align-middle">
                           <div class="m-auto">
-                              <select class="w-3/4 py-2">
+                              <select class="w-3/4 py-2 bg-white border border-gray-300 rounded shadow">
                                 <option>Portugues</option>
                                 <option>English</option>
                               </select>
                           </div>
                           <div>
                             <form class="py-4">
-                                <input class="w-1/2" placeholder="Procurar"/>
-                                <button class="w-1/4 bg-blue-400">Buscar</button>
+                                <input class="w-1/2 border rounded text-sm border-0 shadow focus:outline-none text-base" placeholder="Procurar"/>
+                                <button class="w-1/4 bg-blue-400 border rounded text-base">Buscar</button>
                             </form>     
                           </div>
                     </div>
                 </div>
+                <div class="flex items-center justify-center">
+                    <nav class="relative flex flex-wrap items-center px-2 mb-3">
+                        <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
+                          <ul class="flex flex-col lg:flex-row list-none ml-auto">
+                              <li class="nav-item pr-4">
+                                    <a class="hover:border-b-8 border-fuchsia-600 px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Home
+                                </a>
+                                
+                              </li>
+                              <li class="nav-item">
+                                <a class="px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Institucional
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Graduação
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Pós Graduação
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Pesquisa
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Extensão
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Pessoas
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">
+                                  Contato
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
                 
-                <div class="">
+                <div>
                     <hr class="blueMAT" style="height: 4px;opacity: 1;">    
                 </div>
             </header>
