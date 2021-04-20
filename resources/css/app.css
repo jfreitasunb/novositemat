@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-azul-MAT{
+    background: #009FE5;
+}
+
+.text-azul-MAT{
+    color: #00427e;
+}
+
+.blueMAT{
+    background: #00427e;   
+}
+
+.bg-verde-MAT{
+    background: #449D44;
+}
