@@ -5,3 +5,18 @@
 .li_personalizada::marker {
     color: #F0EE0B;
 }
+
+hr.style-one {
+  border: 0;
+  border-top: 6px double #EBEBEB;
+  text-align: center;
+  width: 87%;
+}
+hr.style-one:after {
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  padding: 0 -10px;
+  background: #fff;
+  color: #8c8c8c;
+}
