@@ -16,15 +16,15 @@
     </head>
     <body>
         <div class="flex flex-col h-screen justify-between">
-            <div class="p-4 flex lg:justify-between md:justify-between items-center">
+            <div class="p-4 flex md:justify-between items-center">
                 {{-- left side --}}
-                <div class="p-4 flex lg:justify-between md:justify-between items-centerlg:w-1/3 md:w-1/2">
+                <div class="p-4 flex md:justify-between items-center md:w-1/2">
                     <a href="#"><img src="{{ asset('imagens/logos/logo.png') }}" width="140" alt="Logo"></a>
                 </div>
 
                 {{-- center --}}
 
-                <div class="lg:w-2/3 lg:self-center md:w-1/2 ml-2 lg:mr-96">
+                <div class="md:w-2/3 md:self-center w-1/2 ml-2 md:mr-96">
                     <h1 class="text-azulMAT1 md:text-4xl md:text-center md:mb-4 font-bold">Departamento de Matemática</h1>
                 </div>
 
@@ -47,7 +47,7 @@
             <div class="flex items-center justify-center">
                 <nav class="relative flex flex-wrap items-center px-2 mb-3">
                     <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
-                        <ul class="flex flex-col lg:flex-row list-none ml-auto">
+                        <ul class="flex flex-col md:flex-row list-none ml-auto text-azulMAT2 text-lg">
                             <li class="nav-item pr-4">
                                 <a class="hover:border-b-8 border-fuchsia-600 px-3 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" href="#pablo">Home
                                 </a>
@@ -91,22 +91,22 @@
             {{-- área principal --}}
                 
             {{-- menu à esquerda e notícias rolando --}}
-            <div class="grid grid-cols-2 gap-4">
-                <div class="ml-10 bg-noticias w-1/4">
-                    <ul class="ml-4 list-disc list-inside blue3">
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Notícias</li></a>
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Seminários</li></a>
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Concursos</li></a>
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Eventos</li></a>
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Links e Documentos</li></a>
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Mídia MAT</li></a>
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Galeria</li></a>
-                        <a class="blue3" href="#"><li class="li_personalizada hover:bg-gray-300">Comissões</li></a>
+            <div class="grid grid-cols-4 gap-0">
+                <div class="ml-10 bg-noticias w-1/2">
+                    <ul class="ml-4 list-disc list-inside text-azulMAT3 text-lg">
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2 text">Notícias</li></a>
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Seminários</li></a>
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Concursos</li></a>
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Eventos</li></a>
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Links e Documentos</li></a>
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Mídia MAT</li></a>
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Galeria</li></a>
+                        <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Comissões</li></a>
                     </ul>
                 </div>
 
                 {{-- notícias --}}
-                <div class="responsive slider bg-gray-400 w-3/4 p-10">
+                <div class="responsive col-span-3 slider bg-gray-400 p-10 w-3/4">
                     <div><img src="imagens/1.png"></div>
                     <div><img src="imagens/2.jpg"></div>
                 </div>
@@ -116,32 +116,73 @@
             {{-- área com mais notícias --}}
             <div>
                 {{-- destaque à esquerda --}}
-                <div>
-                    <img src="#" alt="">
+                <div class="flex inline-block justify-between items-center">
+                    <div class="pl-6">
+                        <span class="text-xm">Notícias</span>
+                    </div>
+
+                    <hr class="style-one">
+                        
+                    <div class="pr-6">
+                        <a class="text-xs" href="#">Veja todas as notícias</a>
+                    </div>
                 </div>
-                {{-- mais alguns destaques --}}
-                <div>
-                    <ul>
-                        <li>
-                            <img src="#" alt="">
-                            <a href="#">Descrição</a>
-                        </li>
 
-                        <li>
-                            <img src="#" alt="">
-                            <a href="#">Descrição</a>
-                        </li>
-
-                        <li>
-                            <img src="#" alt="">
-                            <a href="#">Descrição</a>
-                        </li>
-
-                        <li>
-                            <img src="#" alt="">
-                            <a href="#">Descrição</a>
-                        </li>
-                    </ul>
+                <div class="grid grid-cols-2">
+                    <div class="p-4">
+                        <img src="{{ asset('imagens/mat-entrada.jpg') }}" style="width: 580px; height: 397px">
+                    </div>
+                    {{-- mais alguns destaques --}}
+                    <div class="w-3/4">
+                        <div class="inline-block">
+                            <div class="float-left">
+                                <a href="#" title=""><img src="{{ asset('imagens/mat-entrada.jpg') }}" style="height: 87px"></a>
+                            </div>
+                            <div class="float-left">
+                                <a href="#" title="">
+                                    <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
+                                    <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
+                                </a>
+                                <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+                            </div>
+                        </div>
+                        <div class="inline-block">
+                            <div class="float-left">
+                                <a href="#" title=""><img src="{{ asset('imagens/mat-entrada.jpg') }}" style="height: 87px"></a>
+                            </div>
+                            <div class="float-left">
+                                <a href="#" title="">
+                                    <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
+                                    <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
+                                </a>
+                                <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+                            </div>
+                        </div>
+                        <div class="inline-block">
+                            <div class="float-left">
+                                <a href="#" title=""><img src="{{ asset('imagens/mat-entrada.jpg') }}" style="height: 87px"></a>
+                            </div>
+                            <div class="float-left">
+                                <a href="#" title="">
+                                    <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
+                                    <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
+                                </a>
+                                <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+                            </div>
+                        </div>
+                        <div class="inline-block">
+                            <div class="float-left">
+                                <a href="#" title=""><img src="{{ asset('imagens/mat-entrada.jpg') }}" style="height: 87px"></a>
+                            </div>
+                            <div class="float-left">
+                                <a href="#" title="">
+                                    <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
+                                    <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
+                                </a>
+                                <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
