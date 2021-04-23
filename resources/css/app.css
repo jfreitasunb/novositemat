@@ -2,35 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.bg-azul-MAT{
-    background: #009FE5;
-}
-
-.text-azul-MAT{
-    color: #00427e;
-}
-
-.blueMAT{
-    background: #00427e;   
-}
-
-.bg-noticias{
-    background: #E4E4E4;
-}
-
-.blue3{
-    color:#00479e;
-}
-
-.bg-amarelo-MAT{
-    color: #F0EE0B;
-}
-
 .li_personalizada::marker {
     color: #F0EE0B;
-}
-
-.bg-verde-MAT{
-    background: #449D44;
 }
