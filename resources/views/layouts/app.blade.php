@@ -25,7 +25,7 @@
                 {{-- center --}}
 
                 <div class="lg:w-2/3 lg:self-center md:w-1/2 ml-2 lg:mr-96">
-                    <p class="text-azul-MAT lg:text-4xl md:text-4xl md:text-center lg:mb-4">Departamento de Matemática</p>
+                    <h1 class="text-azulMAT1 md:text-4xl md:text-center md:mb-4 font-bold">Departamento de Matemática</h1>
                 </div>
 
                 {{-- right side --}}
@@ -85,7 +85,7 @@
                 </nav>
             </div>
             <div>
-                <hr class="blueMAT" style="height: 4px;opacity: 1;">    
+                <hr style="background: #00427e; height: 4px;opacity: 1;">    
             </div>
 
             {{-- área principal --}}
@@ -147,7 +147,7 @@
             
             {{-- footer --}}
             <footer class="h-10">
-                <hr class="blueMAT" style="height: 4px;opacity: 1;">
+                <hr style="background: #00427e; height: 4px;opacity: 1;">
                 <p class="">Departamento de Matemática - {{ date("Y") }}</p>
             </footer>
         </div>
