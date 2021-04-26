@@ -20,3 +20,8 @@ hr.style-one:after {
   background: #fff;
   color: #8c8c8c;
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    z-index: 9999;
+}
