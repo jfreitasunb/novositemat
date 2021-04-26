@@ -11,6 +11,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $table = 'usuarios';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,8 +28,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     *
-     * @var array
+     *´
      */
     protected $hidden = [
         'password',
@@ -44,6 +45,6 @@ class User extends Authenticatable
     ];
 
     public function roles(){
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('App\Models\Role', 'role_usuarios','usuario_id');
     }
 }
