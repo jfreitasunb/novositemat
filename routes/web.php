@@ -14,7 +14,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])
+->name('home');
+
+Route::get('/admin', function (){
+    return "você não pode acessar.";
+})->middleware('admin');
 
 Auth::routes();
-
