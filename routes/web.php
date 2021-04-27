@@ -26,3 +26,6 @@ Route::get('/login', [LoginController::class, 'index'])
 ->name('login');
 
 Route::post('/login', [LoginController::class, 'logar']);
+
+Route::get('/passord/reset', [LoginController::class, 'index'])
+->name('password.request');
