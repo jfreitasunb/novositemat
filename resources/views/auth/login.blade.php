@@ -29,18 +29,54 @@
                         <h1 class="text-azulMAT1 md:text-4xl md:text-center md:mb-4 font-bold">Departamento de Matemática</h1>
                     </div>
                 </div>
-            </div>
-        </header>
-        <main>
-            <h1>teste</h1>
-        </main>
-        
-        <!-- footer -->
-        <footer class="h-10">
-            <hr style="background: #00427e; height: 4px;opacity: 1;">
-            <p class="">Departamento de Matemática - {{ date("Y") }}</p>
-        </footer>
-    </div>
-</body>
+            </header>
+            <main class="flex justify-center">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
 
+                    <!-- Email Address -->
+                    <div class="p-4">
+                        <label for="email" :value="__('Email')" />
+
+                        <input id="email" class="border rounded shadow" type="email" name="email" :value="old('email')" required autofocus placeholder="Usuário" />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="p-4">
+                        <label for="password" :value="__('Password')"></label>
+                        <input id="password" class="border rounded shadow"
+                                        type="password"
+                                        name="password"
+                                        required autocomplete="current-password" placeholder="Senha" />
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="p-4">
+                        <label for="remember_me" class="inline-flex items-center">
+                            <input id="remember_me" type="checkbox" class="" name="remember">
+                            <span class="">{{ __('Remember me') }}</span>
+                        </label>
+                    </div>
+
+                    <div class="p-4 items-baseline">
+                        @if (Route::has('password.request'))
+                            <a class="" href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                        @endif
+
+                        <button class="p-4 border-2 bg-blue-400 rounded">
+                            {{ __('Log in') }}
+                        </button>
+                    </div>
+                </form>
+            </main>
+        
+            <!-- footer -->
+            <footer class="h-10">
+                <hr style="background: #00427e; height: 4px;opacity: 1;">
+                <p class="">Departamento de Matemática - {{ date("Y") }}</p>
+            </footer>
+        </div>
+    </body>
 </html>
