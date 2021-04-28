@@ -12,12 +12,4 @@ class Role extends Model
     public function users(){
         return $this->belongsToMany('App\Models\User');
     }
-
-    public function hasAnyRole($roles){
-        return null !== $this->roles()->whereIn('nome', $roles)->fisrt();
-    }
-
-    public function hasRole($role){
-        return null !== $this->roles()->where('nome', $role)->fisrt();
-    }
 }
