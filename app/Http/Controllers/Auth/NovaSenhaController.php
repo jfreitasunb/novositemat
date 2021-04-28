@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
-class NewPasswordController extends Controller
+class NovaSenhaController extends Controller
 {
     /**
      * Display the password reset view.
@@ -19,7 +19,7 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request)
     {
-        return view('auth.reset-password', ['request' => $request]);
+        return view('auth.nova_senha', ['request' => $request]);
     }
 
     /**
