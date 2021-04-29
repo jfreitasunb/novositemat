@@ -19,12 +19,8 @@ use App\Http\Controllers\Auth\RecuperaSenhaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 Route::get('/gc', function (){
     return view('admin.gc');
