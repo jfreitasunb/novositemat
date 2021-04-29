@@ -18,9 +18,7 @@ use App\Http\Controllers\Auth\RecuperaSenhaController;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/gc', function (){
     return view('admin.gc');
