@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
+use App\Models\UsuarioLogin;
+use Carbon\Carbon;
+
 class LoginController extends Controller
 {
     /*
@@ -113,7 +116,14 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
+
+        $id_login = UsuarioLogin::where('usuario_id', auth()->user()->id)->orderBy('data_hora_login', 'DESC')->get()->first()->id;
+
+        UsuarioLogin::where('id', $id_login)->update(['data_hora_logout' => Carbon::now()]);
+
         Auth::guard('web')->logout();
+
+
 
         $request->session()->invalidate();
 
