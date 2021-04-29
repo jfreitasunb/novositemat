@@ -27,7 +27,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/gc', function (){
-    return "você pode acessar.";
+    return view('admin.gc');
 })->middleware('admin');
 
 Route::get('/login', [LoginController::class, 'index'])
