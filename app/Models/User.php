@@ -55,4 +55,9 @@ class User extends Authenticatable
     public function hasRole($role){
         return null !== $this->roles()->where('nome', $role)->first();
     }
+
+    public function logou()
+    {
+        return $this->belongsToMany('App\Models\UsuarioLogin', 'usuario_login', 'usuario_id');
+    }
 }
