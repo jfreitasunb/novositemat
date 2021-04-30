@@ -116,7 +116,6 @@
                         </div>
                     </nav>
                 </div>
-
                 <div class="pb-4">
                     <hr style="background: #00427e; height: 4px;opacity: 1;">    
                 </div>
@@ -125,30 +124,15 @@
             <!-- área principal -->
                 
             <main>
-                <!-- menu à esquerda e notícias rolando -->
                 <div class="grid grid-cols-4 gap-0">
-                    <div class="ml-10 bg-noticias w-1/2">
-                        <ul class="ml-4 list-disc list-inside text-azulMAT3 text-lg">
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2 text">Notícias</li></a>
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Seminários</li></a>
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Concursos</li></a>
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Eventos</li></a>
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Links e Documentos</li></a>
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Mídia MAT</li></a>
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Galeria</li></a>
-                            <a class="text-azulMAT3" href="#"><li class="li_personalizada hover:bg-gray-300 py-2">Comissões</li></a>
-                        </ul>
-                    </div>
+                    <!-- menu à esquerda e notícias rolando -->
+                    @include('layouts.menu_lateral_esquerda')
 
-                    <!-- notícias -->
-                    <div class="slider responsive col-span-3 bg-gray-400 p-10 w-3/4">
-                        <div><img src="imagens/1.png"></div>
-                        <div><img src="imagens/2.jpg"></div>
-                    </div>
-                    
+                    <!-- área com mais notícias -->
+                    @if (Route::currentRouteNamed('home'))
+                        <x-slider-noticias />
+                    @endif
                 </div>
-
-                <!-- área com mais notícias -->
                 <div>
                     <!-- destaque à esquerda -->
                     <div class="flex inline-block justify-between items-center">
@@ -164,60 +148,15 @@
                     </div>
 
                     <div class="grid grid-cols-2">
-                        <div class="p-4">
-                            <img src="imagens/mat-entrada.jpg" style="width: 580px; height: 397px">
-                        </div>
+                        {{-- notícia de destaque --}}
+                        @if (Route::currentRouteNamed('home'))
+                            <x-noticia-principal />
+                        @endif
+                        
                         <!-- mais alguns destaques -->
-                        <div class="w-3/4">
-                            <div class="inline-block">
-                                <div class="float-left">
-                                    <a href="#" title=""><img src="imagens/mat-entrada.jpg" style="height: 87px"></a>
-                                </div>
-                                <div class="float-left">
-                                    <a href="#" title="">
-                                        <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
-                                        <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
-                                    </a>
-                                    <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
-                                </div>
-                            </div>
-                            <div class="inline-block">
-                                <div class="float-left">
-                                    <a href="#" title=""><img src="imagens/mat-entrada.jpg" style="height: 87px"></a>
-                                </div>
-                                <div class="float-left">
-                                    <a href="#" title="">
-                                        <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
-                                        <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
-                                    </a>
-                                    <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
-                                </div>
-                            </div>
-                            <div class="inline-block">
-                                <div class="float-left">
-                                    <a href="#" title=""><img src="imagens/mat-entrada.jpg" style="height: 87px"></a>
-                                </div>
-                                <div class="float-left">
-                                    <a href="#" title="">
-                                        <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
-                                        <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
-                                    </a>
-                                    <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
-                                </div>
-                            </div>
-                            <div class="inline-block">
-                                <div class="float-left">
-                                    <a href="#" title=""><img src="imagens/mat-entrada.jpg" style="height: 87px"></a>
-                                </div>
-                                <div class="float-left">
-                                    <a href="#" title="">
-                                        <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
-                                        <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
-                                    </a>
-                                    <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        @if (Route::currentRouteNamed('home'))
+                            <x-mais-noticias />
+                        @endif
                     </div>
                 </div>
             </main>
