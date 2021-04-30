@@ -15,150 +15,86 @@
 
     </head>
     <body>
-        <div class="flex flex-col h-screen justify-between">
+        @if (!Route::currentRouteNamed('gc'))
+            <div class="flex flex-col h-screen justify-between">
+        @else
+            <div class="">
+        @endif
             <header>
                 <div class="p-4 flex md:justify-between items-center">
                     <!-- left side -->
-                    <div class="p-4 flex md:justify-between items-center md:w-1/2">
-                        <a href="{{URL::to('/')}}"><img src="imagens/logos/logo.png" width="140" alt="Logo"></a>
-                    </div>
+                    <x-logo-site-mat></x-logo-site-mat>
     
                     <!-- center -->
-    
-                    <div class="md:w-2/3 md:self-center w-1/2 ml-2 md:mr-96">
-                        <h1 class="text-azulMAT1 md:text-4xl md:text-center md:mb-4 font-bold">Departamento de Matemática</h1>
-                    </div>
+                    <x-titulo-site-mat></x-titulo-site-mat>
     
                     <!-- right side -->
-                    <div class="w-1/4 align-middle">
-                          <div class="m-auto">
-                              <select class="w-3/4 py-2 bg-white border border-gray-300 rounded shadow">
-                                <option>Portugues</option>
-                                <option>English</option>
-                              </select>
-                          </div>
-                          <div>
-                            <form class="py-4">
-                                <input class="w-1/2 border rounded text-sm border-0 shadow focus:outline-none text-base" placeholder="Procurar"/>
-                                <button class="w-1/4 bg-blue-400 border rounded text-base">Buscar</button>
-                            </form>     
-                          </div>
-                    </div>
+                    @if (!Route::currentRouteNamed('gc'))
+                        <x-idiomas-pesquisa></x-idiomas-pesquisa>
+                    @endif
                 </div>
-                <div class="flex items-center justify-center pb-6 relative text-azulMAT2">
-                    <nav class="relative flex flex-wrap items-center px-2 mb-3">
-                        <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
-                            <ul class="flex flex-col md:flex-row list-none ml-auto text-lg">
-                                <li class="nav-item pr-4 border-transparent border-b-8 border-verdeMAT">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug" href="#">Home
-                                    </a>
-                                </li>
-                                <li class="nav-item border-transparent border-b-8 hover:border-verdeMAT">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="pagina_modelo.html">Institucional
-                                    </a>
-                                </li>
-                                <li class="nav-item dropdown inline-block relative">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="#">Graduação
-                                    </a>
-                                    <div class="dropdown-menu top-0 absolute hidden h-auto flex pt-4 shadow">
-                                        <ul class="dropdown-menu absolute hidden pt-1">
-                                            <li class=""><a class="rounded-t bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Cursos</a></li>
-                                            <li class=""><a class="bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Coordenação</a></li>
-                                            <li class=""><a class="rounded-b bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">E-mural</a></li>
-                                            <li class=""><a class="rounded-b bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Programas Institucionais</a></li>
-                                          </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown inline-block relative">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="#">Pós Graduação
-                                    </a>
-                                    <div class="dropdown-menu top-0 absolute hidden h-auto flex pt-4 shadow">
-                                        <ul class="dropdown-menu absolute hidden pt-1">
-                                            <li class=""><a class="rounded-t bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Sobre</a></li>
-                                            <li class=""><a class="bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Mestrado</a></li>
-                                            <li class=""><a class="rounded-b bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Doutorado</a></li>
-                                            <li class=""><a class="rounded-b bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Profmat</a></li>
-                                            <li class=""><a class="rounded-b bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Inscrições</a></li>
-                                          </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown inline-block relative">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="#">Pesquisa
-                                    </a>
-                                    <div class="dropdown-menu top-0 absolute hidden h-auto flex pt-4 shadow">
-                                        <ul class="dropdown-menu absolute hidden pt-1">
-                                            <li class=""><a class="rounded-t bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Publicações</a></li>
-                                            <li class=""><a class="bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Linhas de Pesquisa</a></li>
-                                          </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown inline-block relative">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="#">Extensão
-                                    </a>
-                                    <div class="dropdown-menu top-0 absolute hidden h-auto flex pt-4 shadow">
-                                        <ul class="dropdown-menu absolute hidden pt-1">
-                                            <li class=""><a class="rounded-t bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Submissão de propostas</a></li>
-                                            <li class=""><a class="bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Programa/Projetos/Ações</a></li>
-                                            <li class=""><a class="rounded-b bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Fale Conosco</a></li>
-                                            <li class=""><a class="rounded-b bg-noticias hover:bg-verdeMAT py-2 px-4 block whitespace-no-wrap" href="#">Sobre a Extensão</a></li>
-                                          </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item border-transparent border-b-8 hover:border-verdeMAT">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="#">Pessoas
-                                    </a>
-                                </li>
-                                <li class="nav-item border-transparent border-b-8 hover:border-verdeMAT">
-                                    <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="#">Contato
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+                @if (!Route::currentRouteNamed('gc'))
+                    <x-menu-principal></x-menu-principal>
+                @endif
+                
                 <div class="pb-4">
                     <hr style="background: #00427e; height: 4px;opacity: 1;">    
                 </div>
             </header>
 
             <!-- área principal -->
-                
+        @if (Route::currentRouteNamed('login'))
+            <main class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        @else
             <main>
-                <div class="grid grid-cols-4 gap-0">
-                    <!-- menu à esquerda e notícias rolando -->
-                    @include('layouts.menu_lateral_esquerda')
+        @endif
+                @if (Route::currentRouteNamed('gc'))
+                    <x-gc></x-gc>
+                @endif
 
-                    <!-- área com mais notícias -->
-                    @if (Route::currentRouteNamed('home'))
-                        <x-slider-noticias />
-                    @endif
-                </div>
-                <div>
-                    <!-- destaque à esquerda -->
-                    <div class="flex inline-block justify-between items-center">
-                        <div class="pl-6">
-                            <span class="text-xm">Notícias</span>
-                        </div>
-
-                        <hr class="style-one">
-                            
-                        <div class="pr-6">
-                            <a class="text-xs" href="#">Veja todas as notícias</a>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2">
-                        {{-- notícia de destaque --}}
-                        @if (Route::currentRouteNamed('home'))
-                            <x-noticia-principal />
+                @if (Route::currentRouteNamed('login'))
+                    <x-area-login></x-area-login>
+                @else
+                    <div class="grid grid-cols-4 gap-0">
+                        <!-- menu à esquerda e notícias rolando -->
+                        @if (!Route::currentRouteNamed('gc'))
+                            <x-menu_lateral_esquerda/>
                         @endif
-                        
-                        <!-- mais alguns destaques -->
+
+                        <!-- área com mais notícias -->
                         @if (Route::currentRouteNamed('home'))
-                            <x-mais-noticias />
+                            <x-slider-noticias></x-slider-noticias>
                         @endif
                     </div>
-                </div>
+                    <div>
+                        @if (!Route::currentRouteNamed('gc'))
+                            <!-- destaque à esquerda -->
+                            <div class="flex inline-block justify-between items-center">
+                                <div class="pl-6">
+                                    <span class="text-xm">Notícias</span>
+                                </div>
+
+                                <hr class="style-one">
+                                    
+                                <div class="pr-6">
+                                    <a class="text-xs" href="#">Veja todas as notícias</a>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2">
+                                {{-- notícia de destaque --}}
+                                @if (Route::currentRouteNamed('home'))
+                                    <x-noticia-principal></x-noticia-principal>
+                                @endif
+                                
+                                <!-- mais alguns destaques -->
+                                @if (Route::currentRouteNamed('home'))
+                                    <x-mais-noticias></x-mais-noticias>y
+                                @endif
+                            </div>
+                        @endif
+                    </div>
+                @endif
             </main>
             
             <!-- footer -->
