@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class MaisPrincipal extends Component
+class MaisNoticias extends Component
 {
     /**
      * Create a new component instance.
