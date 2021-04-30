@@ -15,7 +15,7 @@
 
     </head>
     <body>
-        @if (!Route::currentRouteNamed('gc'))
+        @if (!str_contains('gc', Route::currentRouteName()))
             <div class="flex flex-col h-screen justify-between">
         @else
             <div class="">
@@ -29,11 +29,11 @@
                     <x-titulo-site-mat></x-titulo-site-mat>
     
                     <!-- right side -->
-                    @if (!Route::currentRouteNamed('gc'))
+                    @if (!str_contains('gc', Route::currentRouteName()))
                         <x-idiomas-pesquisa></x-idiomas-pesquisa>
                     @endif
                 </div>
-                @if (!Route::currentRouteNamed('gc'))
+                @if (!str_contains('gc', Route::currentRouteName()))
                     <x-menu-principal></x-menu-principal>
                 @endif
                 
@@ -43,31 +43,31 @@
             </header>
 
             <!-- área principal -->
-        @if (Route::currentRouteNamed('login'))
+        @if (str_contains('login', Route::currentRouteName()))
             <main class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         @else
             <main>
         @endif
-                @if (Route::currentRouteNamed('gc'))
+                @if (str_contains('gc', Route::currentRouteName()))
                     <x-gc></x-gc>
                 @endif
 
-                @if (Route::currentRouteNamed('login'))
+                @if (str_contains('login', Route::currentRouteName()))
                     <x-area-login></x-area-login>
                 @else
                     <div class="grid grid-cols-4 gap-0">
                         <!-- menu à esquerda e notícias rolando -->
-                        @if (!Route::currentRouteNamed('gc'))
+                        @if (!str_contains('gc', Route::currentRouteName()))
                             <x-menu_lateral_esquerda/>
                         @endif
 
                         <!-- área com mais notícias -->
-                        @if (Route::currentRouteNamed('home'))
+                        @if (str_contains('home', Route::currentRouteName()))
                             <x-slider-noticias></x-slider-noticias>
                         @endif
                     </div>
                     <div>
-                        @if (!Route::currentRouteNamed('gc'))
+                        @if (!str_contains('gc', Route::currentRouteName()))
                             <!-- destaque à esquerda -->
                             <div class="flex inline-block justify-between items-center">
                                 <div class="pl-6">
@@ -83,12 +83,12 @@
 
                             <div class="grid grid-cols-2">
                                 {{-- notícia de destaque --}}
-                                @if (Route::currentRouteNamed('home'))
+                                @if (str_contains('home', Route::currentRouteName()))
                                     <x-noticia-principal></x-noticia-principal>
                                 @endif
                                 
                                 <!-- mais alguns destaques -->
-                                @if (Route::currentRouteNamed('home'))
+                                @if (str_contains('home', Route::currentRouteName()))
                                     <x-mais-noticias></x-mais-noticias>y
                                 @endif
                             </div>
