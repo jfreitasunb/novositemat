@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NovaSenhaController;
 use App\Http\Controllers\Auth\RecuperaSenhaController;
+use App\Http\Controllers\Admin\MenuSuperiorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +21,25 @@ use App\Http\Controllers\Auth\RecuperaSenhaController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/gc', function (){
-    return view('layouts.app');
-})->middleware('admin')->name('gc');
 
-Route::get('/login', [LoginController::class, 'index'])
+Route::prefix('/admin')->middleware('admin')->group(function () {
+    Route::get('/gc', function (){
+        return view('admin.gc');
+    })->name('gc');
+
+    Route::get('/gc/menu/superior', [MenuSuperiorController::class, 'index'])->name('menu.superior');
+
+    Route::post('/gc/menu/superior', [MenuSuperiorController::class, 'cadastrar_menu']);
+});
+
+Route::get('/gc', [LoginController::class, 'index'])
 ->name('login');
 
-Route::post('/login', [LoginController::class, 'logar']);
+
+Route::get('/gc', [LoginController::class, 'index'])
+->name('login');
+
+Route::post('/gc', [LoginController::class, 'logar']);
 
 Route::get('/forgot-password', [RecuperaSenhaController::class, 'create'])
                 ->middleware('guest')
