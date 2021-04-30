@@ -21,8 +21,8 @@ use App\Http\Controllers\Auth\RecuperaSenhaController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/gc', function (){
-    return view('admin.gc');
-})->middleware('admin');
+    return view('layouts.app');
+})->middleware('admin')->name('gc');
 
 Route::get('/login', [LoginController::class, 'index'])
 ->name('login');
