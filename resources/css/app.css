@@ -25,3 +25,7 @@ hr.style-one:after {
     display: block;
     z-index: 9999;
 }
+
+.btn{
+  @apply text-center rounded-full py-2 px-3 text-xs font-bold cursor-pointer tracking-wider;
+}
