@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
+use Session;
+
 class HomeController extends Controller
 {
     /**
@@ -24,8 +26,22 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        App::setLocale('pt-br');
-
         return view('layouts.app');
+    }
+
+    public function getLangPortuguese()
+    {
+        App::setLocale('pt_BR');
+
+        Session::put('locale','pt_BR');
+
+        return redirect()->back();
+    }
+
+    public function getLangEnglish()
+    {
+        Session::put('locale','en');
+        
+        return redirect()->back();
     }
 }

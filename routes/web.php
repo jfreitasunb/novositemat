@@ -19,7 +19,11 @@ use App\Http\Controllers\Admin\MenuSuperiorController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/ptbr', [HomeController::class, 'getLangPortuguese'])->middleware('idioma.site')->name('lang.portuguese');
+
+Route::get('/en', [HomeController::class, 'getLangEnglish'])->middleware('idioma.site')->name('lang.english');
+
+Route::get('/', [HomeController::class, 'index'])->middleware('idioma.site')->name('home');
 
 
 Route::prefix('/admin')->middleware('admin')->group(function () {
