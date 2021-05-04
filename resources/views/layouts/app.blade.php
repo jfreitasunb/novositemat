@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Departamento de Matemática</title>
+        <title>{{ __('Mathematics Department') }}</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
@@ -71,13 +71,13 @@
                             <!-- destaque à esquerda -->
                             <div class="flex inline-block justify-between items-center">
                                 <div class="pl-6">
-                                    <span class="text-xm">Notícias</span>
+                                    <span class="text-xm">{{ __('News') }}</span>
                                 </div>
 
                                 <hr class="style-one">
                                     
                                 <div class="pr-6">
-                                    <a class="text-xs" href="#">Veja todas as notícias</a>
+                                    <a class="text-xs" href="#">{{ __('See all news') }}</a>
                                 </div>
                             </div>
 
@@ -89,7 +89,7 @@
                                 
                                 <!-- mais alguns destaques -->
                                 @if (str_contains('home', Route::currentRouteName()))
-                                    <x-mais-noticias></x-mais-noticias>y
+                                    <x-mais-noticias></x-mais-noticias>
                                 @endif
                             </div>
                         @endif
@@ -100,7 +100,7 @@
             <!-- footer -->
             <footer class="h-10">
                 <hr style="background: #00427e; height: 4px;opacity: 1;">
-                <p class="">Departamento de Matemática - {{ date("Y") }}</p>
+                <p class="">{{ __('Department of Mathematics') }} - {{ date("Y") }}</p>
             </footer>
         </div>
     </body>

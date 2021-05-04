@@ -8,7 +8,7 @@
                 <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
                 <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
             </a>
-            <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+            <div class="mt-2 float-right"><a href="#" title="">{{ __('Read more') }}</a></div>
         </div>
     </div>
     <div class="inline-block">
@@ -20,7 +20,7 @@
                 <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
                 <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
             </a>
-            <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+            <div class="mt-2 float-right"><a href="#" title="">{{ __('Read more') }}</a></div>
         </div>
     </div>
     <div class="inline-block">
@@ -32,7 +32,7 @@
                 <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
                 <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
             </a>
-            <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+            <div class="mt-2 float-right"><a href="#" title="">{{ __('Read more') }}</a></div>
         </div>
     </div>
     <div class="inline-block">
@@ -44,7 +44,7 @@
                 <div class="ml-2 font-bold text-lg">Exame de Qualificação ao Mestrado 2020.2</div>
                 <p class="ml-2">Inscrições para  Exame de Qualificação ao Mestrado 2020.2</p>
             </a>
-            <div class="mt-2 float-right"><a href="#" title="">Leia mais</a></div>
+            <div class="mt-2 float-right"><a href="#" title="">{{ __('Read more') }}</a></div>
         </div>
     </div>
 </div>
