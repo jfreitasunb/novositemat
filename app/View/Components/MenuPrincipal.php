@@ -31,6 +31,15 @@ class MenuPrincipal extends Component
 
         $menu_superior = MenuSite::where('locale', $locale)->where('posicao', 'superior')->where('ativo', True)->orderBy('id')->get();
 
-        return view('components.menu-principal', compact('menu_superior'));
+        $menu_principal = [];
+        foreach ($menu_superior as $menu) {
+            $menu_principal[$menu['id']]['nome_menu'] = $menu['nome_menu'];
+            $menu_principal[$menu['id']]['link'] = $menu['link'];
+            $menu_principal[$menu['id']]['dropdown'] = $menu['dropdown'];
+        }
+
+        // dd($menu_principal);
+
+        return view('components.menu-principal', compact('menu_principal'));
     }
 }
