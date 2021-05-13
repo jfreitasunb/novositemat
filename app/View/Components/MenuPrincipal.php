@@ -4,6 +4,10 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+use App\Models\MenuSite;
+
+use Session;
+
 class MenuPrincipal extends Component
 {
     /**
@@ -23,6 +27,10 @@ class MenuPrincipal extends Component
      */
     public function render()
     {
-        return view('components.menu-principal');
+        $locale = Session::get('locale');
+
+        $menu_superior = MenuSite::where('locale', $locale)->where('posicao', 'superior')->where('ativo', True)->orderBy('id')->get();
+
+        return view('components.menu-principal', compact('menu_superior'));
     }
 }
