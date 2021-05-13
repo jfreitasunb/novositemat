@@ -18,7 +18,9 @@ class CreateMenuSiteTable extends Migration
             $table->string('nome_menu', 100);
             $table->string('locale')->index();
             $table->unique(['id', 'locale']);
-            $table->string('posicao',20);
+            $table->string('posicao', 20);
+            $table->string('link', 100);
+            $table->boolean('dropdown')->default(False);
             $table->boolean('ativo');
             $table->timestamps();
         });

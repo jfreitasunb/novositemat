@@ -15,6 +15,8 @@ class MenuSite extends Model
         'locale',
         'nome_menu',
         'posicao',
+        'link',
+        'dropdown',
         'ativo',
     ];
 }
