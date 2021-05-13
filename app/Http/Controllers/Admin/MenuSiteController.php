@@ -32,11 +32,11 @@ class MenuSiteController extends Controller
             'menu_ativo' => 'required',
         ]);
 
-        $array['pt_br'] = Purifier::clean(trim($request->texto_pt));
+        $array['pt_BR'] = Purifier::clean(trim($request->texto_pt));
 
         $array['en'] = Purifier::clean(trim($request->texto_en));
 
-        foreach (['en', 'pt_br'] as $locale) {
+        foreach (['en', 'pt_BR'] as $locale) {
             
             $menu = new MenuSite();
 
