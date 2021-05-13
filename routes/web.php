@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NovaSenhaController;
 use App\Http\Controllers\Auth\RecuperaSenhaController;
-use App\Http\Controllers\Admin\MenuSuperiorController;
+use App\Http\Controllers\Admin\MenuSiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +31,9 @@ Route::prefix('/admin')->middleware('admin')->group(function () {
         return view('admin.gc');
     })->name('gc');
 
-    Route::get('/gc/menu/superior', [MenuSuperiorController::class, 'index'])->name('menu.superior');
+    Route::get('/gc/menu/superior', [MenuSiteController::class, 'index'])->name('menu.superior');
 
-    Route::post('/gc/menu/superior', [MenuSuperiorController::class, 'cadastrar_menu']);
+    Route::post('/gc/menu/superior', [MenuSiteController::class, 'cadastrar_menu']);
 });
 
 Route::get('/gc', [LoginController::class, 'index'])

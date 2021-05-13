@@ -77,7 +77,7 @@
           </div>
         </nav>
         <div class="justify-center">
-            @yield('menu_superior')
+            @yield('menus_site')
         </div>
         </main>
         

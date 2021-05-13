@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\MenuSuperior;
+use App\Models\MenuSite;
 
 use App\Http\Controllers\Controller;
 
@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 use Purifier;
 
-class MenuSuperiorController extends Controller
+class MenuSiteController extends Controller
 {
     public function __construct()
     {
@@ -19,11 +19,13 @@ class MenuSuperiorController extends Controller
 
     public function index()
     {
-        return view('admin.menu_superior');
+        return view('admin.menus_site');
     }
 
     public function cadastrar_menu(Request $request)
     {
+        dd($request);
+        
         $request->validate([
             'texto_pt' => 'required',
             'texto_en' => 'required'
@@ -35,7 +37,7 @@ class MenuSuperiorController extends Controller
 
         foreach (['en', 'pt_br'] as $locale) {
             
-            $menu = new MenuSuperior();
+            $menu = new MenuSite();
 
             $menu->nome_menu = $array[$locale];
 
@@ -44,6 +46,6 @@ class MenuSuperiorController extends Controller
             $menu->save();
         }
 
-        return redirect()->route('menu.superior');
+        return redirect()->route('menu.menus_site');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMenuSuperiorTable extends Migration
+class CreateMenuSiteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateMenuSuperiorTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_superior', function (Blueprint $table) {
+        Schema::create('menu_site', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome_menu', 100);
             $table->string('locale')->index();
             $table->unique(['id', 'locale']);
+            $table->string('posicao',20);
+            $table->boolean('ativo');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateMenuSuperiorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_superior');
+        Schema::dropIfExists('menu_site');
     }
 }
