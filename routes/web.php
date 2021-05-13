@@ -31,9 +31,9 @@ Route::prefix('/admin')->middleware('admin')->group(function () {
         return view('admin.gc');
     })->name('gc');
 
-    Route::get('/gc/menu/superior', [MenuSiteController::class, 'index'])->name('menu.superior');
+    Route::get('/gc/menu/site', [MenuSiteController::class, 'index'])->name('menus.site');
 
-    Route::post('/gc/menu/superior', [MenuSiteController::class, 'cadastrar_menu']);
+    Route::post('/gc/menu/site', [MenuSiteController::class, 'cadastrar_menu']);
 });
 
 Route::get('/gc', [LoginController::class, 'index'])
