@@ -7,7 +7,7 @@ use App\Models\MenuSite;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use Mews\Purifier\Purifier as PurifierPurifier;
 use Purifier;
 
 class MenuSiteController extends Controller
@@ -24,11 +24,12 @@ class MenuSiteController extends Controller
 
     public function cadastrar_menu(Request $request)
     {
-        dd($request);
-        
+
         $request->validate([
-            'texto_pt' => 'required',
-            'texto_en' => 'required'
+            'texto_pt' => 'required|unique:menu_site,nome_menu',
+            'texto_en' => 'required|unique:menu_site,nome_menu',
+            'posicao_menu'  => 'required',
+            'menu_ativo' => 'required',
         ]);
 
         $array['pt_br'] = Purifier::clean(trim($request->texto_pt));
@@ -43,9 +44,13 @@ class MenuSiteController extends Controller
 
             $menu->locale = $locale;
 
+            $menu->posicao = Purifier::clean(trim($request->posicao_menu));
+
+            $menu->ativo = (boolean)$request->menu_ativo;
+
             $menu->save();
         }
 
-        return redirect()->route('menu.menus_site');
+        return redirect()->route('menus.site');
     }
 }
