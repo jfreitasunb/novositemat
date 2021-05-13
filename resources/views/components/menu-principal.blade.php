@@ -2,11 +2,14 @@
     <nav class="relative flex flex-wrap items-center px-2 mb-3">
         <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
             <ul class="flex flex-col md:flex-row list-none ml-auto text-lg">
-                <li class="nav-item pr-4 border-transparent border-b-8 border-verdeMAT">
-                    <a class="px-3 flex items-center text-xm font-bold leading-snug" href="#">Home
+                @foreach ($menu_superior as $menu)
+                    <li class="nav-item pr-4 border-transparent border-b-8 border-verdeMAT">
+                    <a class="px-3 flex items-center text-xm font-bold leading-snug" href="#">{{ $menu['nome_menu'] }}
                     </a>
                 </li>
-                <li class="nav-item border-transparent border-b-8 hover:border-verdeMAT">
+                @endforeach
+                
+                {{-- <li class="nav-item border-transparent border-b-8 hover:border-verdeMAT">
                     <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="pagina_modelo.html">Institucional
                     </a>
                 </li>
@@ -64,7 +67,7 @@
                 <li class="nav-item border-transparent border-b-8 hover:border-verdeMAT">
                     <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="#">Contato
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </nav>
