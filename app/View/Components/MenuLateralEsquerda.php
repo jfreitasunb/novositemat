@@ -29,7 +29,7 @@ class MenuLateralEsquerda extends Component
     {
         $locale = Session::get('locale');
 
-        $menu_lateral = MenuSite::where('locale', $locale)->where('posicao', 'lateral')->where('ativo', True)->orderBy('id')->get();
+        $menu_lateral = MenuSite::where('locale', $locale)->where('posicao', 'lateral')->where('ativo', True)->orderBy('ordem_menu')->get();
 
         return view('components.menu-lateral-esquerda', compact('menu_lateral'));
     }
