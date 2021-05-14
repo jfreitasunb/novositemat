@@ -9,13 +9,14 @@ class MenuSite extends Model
 {
     use HasFactory;
 
-    protected $table = 'menu_site';
+    protected $table = 'menus_site';
 
     protected $fillable = [
-        'locale',
         'nome_menu',
+        'locale',
         'posicao',
         'link',
+        'ordem_menu',
         'dropdown',
         'ativo',
     ];

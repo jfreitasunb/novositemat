@@ -13,13 +13,14 @@ class CreateMenuSiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_site', function (Blueprint $table) {
+        Schema::create('menus_site', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome_menu', 100);
             $table->string('locale')->index();
             $table->unique(['id', 'locale']);
             $table->string('posicao', 20);
             $table->string('link', 100);
+            $table->integer('ordem_menu');
             $table->boolean('dropdown')->default(False);
             $table->boolean('ativo');
             $table->timestamps();
@@ -33,6 +34,6 @@ class CreateMenuSiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_site');
+        Schema::dropIfExists('menus_site');
     }
 }
