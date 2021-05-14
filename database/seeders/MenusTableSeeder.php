@@ -25,6 +25,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/home',
+            'ordem_menu' => 1,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -34,6 +35,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/home',
+            'ordem_menu' => 1,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -43,6 +45,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/institutional',
+            'ordem_menu' => 2,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -52,6 +55,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/institucional',
+            'ordem_menu' => 2,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -61,6 +65,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/undergraduate',
+            'ordem_menu' => 3,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -70,6 +75,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/graduacao',
+            'ordem_menu' => 3,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -79,6 +85,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/graduate',
+            'ordem_menu' => 4,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -88,6 +95,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/pos',
+            'ordem_menu' => 4,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -97,6 +105,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/research',
+            'ordem_menu' => 5,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -106,6 +115,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/pesquisa',
+            'ordem_menu' => 5,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -115,6 +125,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/service_and_outreach',
+            'ordem_menu' => 6,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -124,6 +135,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/extensao',
+            'ordem_menu' => 6,
             'dropdown' => True,
             'ativo' => True
         ]);
@@ -133,6 +145,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/people',
+            'ordem_menu' => 7,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -142,6 +155,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/pessoas',
+            'ordem_menu' => 7,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -151,6 +165,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'superior',
             'link' => '/contact_us',
+            'ordem_menu' => 8,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -160,6 +175,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'superior',
             'link' => '/contato',
+            'ordem_menu' => 8,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -169,6 +185,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'lateral',
             'link' => '/news',
+            'ordem_menu' => 1,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -178,6 +195,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'lateral',
             'link' => '/noticias',
+            'ordem_menu' => 1,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -187,6 +205,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'lateral',
             'link' => '/seminars',
+            'ordem_menu' => 2,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -196,6 +215,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'lateral',
             'link' => '/seminarios',
+            'ordem_menu' => 2,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -205,6 +225,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'lateral',
             'link' => '/job_opportunities',
+            'ordem_menu' => 3,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -214,6 +235,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'lateral',
             'link' => '/concursos',
+            'ordem_menu' => 3,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -223,6 +245,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'lateral',
             'link' => '/events',
+            'ordem_menu' => 4,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -232,6 +255,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'lateral',
             'link' => '/eventos',
+            'ordem_menu' => 4,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -241,6 +265,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'lateral',
             'link' => '/links_and_documents',
+            'ordem_menu' => 5,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -250,6 +275,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'lateral',
             'link' => '/links_e_documentos',
+            'ordem_menu' => 5,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -259,6 +285,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'lateral',
             'link' => '/midia_mat',
+            'ordem_menu' => 6,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -268,6 +295,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'lateral',
             'link' => '/midia_mat',
+            'ordem_menu' => 6,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -277,6 +305,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "en",
             'posicao' => 'lateral',
             'link' => '/gallery',
+            'ordem_menu' => 7,
             'dropdown' => False,
             'ativo' => True
         ]);
@@ -286,6 +315,7 @@ class MenusTableSeeder extends Seeder
             'locale' => "pt_BR",
             'posicao' => 'lateral',
             'link' => '/galeria',
+            'ordem_menu' => 7,
             'dropdown' => False,
             'ativo' => True
         ]);
