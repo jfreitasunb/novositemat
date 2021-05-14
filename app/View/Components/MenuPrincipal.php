@@ -6,6 +6,8 @@ use Illuminate\View\Component;
 
 use App\Models\MenuSite;
 
+use App\Models\SubMenu;
+
 use Session;
 
 class MenuPrincipal extends Component
@@ -29,17 +31,29 @@ class MenuPrincipal extends Component
     {
         $locale = Session::get('locale');
 
-        $menu_superior = MenuSite::where('locale', $locale)->where('posicao', 'superior')->where('ativo', True)->orderBy('id')->get();
+        $menu_superior = MenuSite::where('locale', $locale)->where('posicao', 'superior')->where('ativo', True)->orderBy('ordem_menu')->get();
 
         $menu_principal = [];
         foreach ($menu_superior as $menu) {
+            $menu_principal[$menu['id']]['id'] = $menu['id'];
             $menu_principal[$menu['id']]['nome_menu'] = $menu['nome_menu'];
             $menu_principal[$menu['id']]['link'] = $menu['link'];
             $menu_principal[$menu['id']]['dropdown'] = $menu['dropdown'];
+
+            if ($menu['dropdown']) {
+
+                $drop = SubMenu::where('menus_site_id', $menu['id'])->where('ativo', True)->orderBy('ordem_menu')->get();
+
+                $i=0;
+                foreach ($drop as $item) {
+                    $itens_dropdown[$menu['id']][$i]['nome_menu'] = $item['nome_menu'];
+                    
+                    $itens_dropdown[$menu['id']][$i]['link'] = $item['link'];
+
+                    $i++;
+                }
+            }
         }
-
-        // dd($menu_principal);
-
-        return view('components.menu-principal', compact('menu_principal'));
+        return view('components.menu-principal', compact('menu_principal', 'itens_dropdown'));
     }
 }
