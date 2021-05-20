@@ -10,6 +10,8 @@ use App\Models\SubMenu;
 
 use Session;
 
+use Str;
+
 class MenuPrincipal extends Component
 {
     /**
@@ -54,6 +56,8 @@ class MenuPrincipal extends Component
                 }
             }
         }
+
+        dd(Str::slug('Pós Graduação'));
         return view('components.menu-principal', compact('menu_principal', 'itens_dropdown'));
     }
 }
