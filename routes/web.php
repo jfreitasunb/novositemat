@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaginaPrincipal\InstitucionalController;
+use App\Http\Controllers\PaginaPrincipal\PessoasController;
+use App\Http\Controllers\PaginaPrincipal\ContatoController;
+
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NovaSenhaController;
 use App\Http\Controllers\Auth\RecuperaSenhaController;
@@ -25,6 +29,13 @@ Route::get('/en', [HomeController::class, 'getLangEnglish'])->middleware('idioma
 
 Route::get('/', [HomeController::class, 'index'])->middleware('idioma.site')->name('home');
 
+Route::get('/', [HomeController::class, 'index'])->middleware('idioma.site')->name('/home');
+
+Route::get('/institucional', [InstitucionalController::class, 'index'])->middleware('idioma.site')->name('/institucional');
+
+Route::get('/pessoas', [PessoasController::class, 'index'])->middleware('idioma.site')->name('/pessoas');
+
+Route::get('/contato', [ContatoController::class, 'index'])->middleware('idioma.site')->name('/contato');
 
 Route::prefix('/admin')->middleware('admin')->group(function () {
     Route::get('/gc', function (){
