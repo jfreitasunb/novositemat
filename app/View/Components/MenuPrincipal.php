@@ -33,9 +33,14 @@ class MenuPrincipal extends Component
     {
         $locale = Session::get('locale');
 
+        if (is_null($locale)) {
+            $locale = app()->getLocale();
+        }
+
         $menu_superior = MenuSite::where('locale', $locale)->where('posicao', 'superior')->where('ativo', True)->orderBy('ordem_menu')->get();
 
         $menu_principal = [];
+
         foreach ($menu_superior as $menu) {
             $menu_principal[$menu['id']]['id'] = $menu['id'];
             $menu_principal[$menu['id']]['nome_menu'] = $menu['nome_menu'];
@@ -57,7 +62,6 @@ class MenuPrincipal extends Component
             }
         }
 
-        dd(Str::slug('Pós Graduação'));
         return view('components.menu-principal', compact('menu_principal', 'itens_dropdown'));
     }
 }
