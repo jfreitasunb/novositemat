@@ -5,7 +5,7 @@
                 @foreach ($menu_principal as $menu)
                     @if (!$menu['dropdown'])
                         <li class="nav-item pr-4 border-transparent border-b-8 border-verdeMAT hover:border-verdeMAT">
-                            <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="{{ $menu['link'] }}">{{ $menu['nome_menu'] }}
+                            <a class="px-3 flex items-center text-xm font-bold leading-snug hover:opacity-75" href="{{ route($menu['link']) }}">{{ $menu['nome_menu'] }}
                             </a>
                         </li>
                     @else
