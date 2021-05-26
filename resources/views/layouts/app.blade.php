@@ -62,7 +62,7 @@
                         @endif
 
                         <!-- área com mais notícias -->
-                        @if (str_contains('home', Route::currentRouteName()))
+                        @if (str_contains('home', Route::currentRouteName()) || str_contains('/home', Route::currentRouteName()))
                             <x-slider-noticias></x-slider-noticias>
                         @endif
                     </div>
@@ -83,12 +83,12 @@
 
                             <div class="grid grid-cols-2">
                                 {{-- notícia de destaque --}}
-                                @if (str_contains('home', Route::currentRouteName()))
+                                @if (str_contains('home', Route::currentRouteName()) || str_contains('/home', Route::currentRouteName()))
                                     <x-noticia-principal></x-noticia-principal>
                                 @endif
                                 
                                 <!-- mais alguns destaques -->
-                                @if (str_contains('home', Route::currentRouteName()))
+                                @if (str_contains('home', Route::currentRouteName()) || str_contains('/home', Route::currentRouteName()))
                                     <x-mais-noticias></x-mais-noticias>
                                 @endif
                             </div>
