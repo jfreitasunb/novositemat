@@ -49,8 +49,10 @@ class InstitucionalController extends Controller
 
         $show_slides = False;
 
+        $show_noticias = False;
+
         // $titulo_pagina = "Temporarioa";
 
-        return view('templates.partials.institucional', compact('dados', 'titulo_pagina', 'show_slides'));
+        return view('templates.partials.institucional', compact('dados', 'titulo_pagina', 'show_slides', 'show_noticias'));
     }
 }
