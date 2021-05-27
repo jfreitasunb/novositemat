@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
+use App\Models\MenuSite;
+
+use App\Models\SubMenu;
+
 use Session;
 
 class HomeController extends Controller
@@ -26,7 +30,9 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        return view('layouts.app');
+        $show_slides = True;
+
+        return view('layouts.app', compact('show_slides'));
     }
 
     public function getLangPortuguese()
