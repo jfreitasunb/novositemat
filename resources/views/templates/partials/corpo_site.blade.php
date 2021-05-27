@@ -32,3 +32,7 @@
         </div>
     </div>
 @endif
+
+@if ($show_noticias)
+    @include('templates.partials.mostrar_noticias')
+@endif
