@@ -16,7 +16,23 @@ hr.style-one:after {
   display: inline-block;
   position: relative;
   top: -15px;
-  padding: 0 -10px;
+  padding: 0 -20px;
+  background: #fff;
+  color: #8c8c8c;
+}
+
+
+hr.style-two {
+  border: 0;
+  border-top: 6px double #EBEBEB;
+  text-align: center;
+  width: 100%;
+}
+hr.style-two:after {
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  padding: 0 -20px;
   background: #fff;
   color: #8c8c8c;
 }
