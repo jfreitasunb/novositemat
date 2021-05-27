@@ -32,7 +32,9 @@ class HomeController extends Controller
     {   
         $show_slides = True;
 
-        return view('layouts.app', compact('show_slides'));
+        $show_noticias = True;
+
+        return view('layouts.app', compact('show_slides', 'show_noticias'));
     }
 
     public function getLangPortuguese()
