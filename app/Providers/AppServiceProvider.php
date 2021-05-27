@@ -69,6 +69,8 @@ class AppServiceProvider extends ServiceProvider
 
         $show_slides = False;
 
-        View::share(compact('menu_principal', 'itens_dropdown', 'menu_lateral', 'show_slides'));
+        $show_noticias = False;
+
+        View::share(compact('menu_principal', 'itens_dropdown', 'menu_lateral', 'show_slides', 'show_noticias'));
     }
 }
