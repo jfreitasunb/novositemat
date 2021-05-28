@@ -50,7 +50,7 @@ class LoginController extends Controller
     {   
         App::setLocale('pt_BR');
 
-        return view('layouts.app');
+        return view('admin.gc');
     }
 
     public function logar(Request $request)
