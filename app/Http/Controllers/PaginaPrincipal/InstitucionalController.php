@@ -35,24 +35,22 @@ class InstitucionalController extends Controller
      */
     public function index()
     {   
+        $locale = app()->getLocale();
+
+        $menu_principal = $this->menu_principal($locale);
+
+        $itens_dropdown = $this->itens_dropdown($locale);
+
+        $menu_lateral = $this->menu_lateral($locale);
+
         $dados = "temp";
 
-        $locale = Session::get('locale');
-
-        if (is_null($locale)) {
-            $locale = app()->getLocale();
-        }
-
-        $titulo_pagina = MenuSite::where('locale', $locale)->where('link', Route::currentRouteName())->where('ativo', True)->orderBy('ordem_menu')->get();
-
-        dd($titulo_pagina);
-
+        $titulo_pagina = MenuSite::where('locale', $locale)->where('link', Route::currentRouteName())->where('ativo', True)->orderBy('ordem_menu')->get()->first()->nome_menu;
+        
         $show_slides = False;
 
         $show_noticias = False;
 
-        // $titulo_pagina = "Temporarioa";
-
-        return view('templates.partials.institucional', compact('dados', 'titulo_pagina', 'show_slides', 'show_noticias'));
+        return view('templates.partials.institucional', compact('dados', 'titulo_pagina', 'menu_principal', 'itens_dropdown', 'menu_lateral', 'show_slides', 'show_noticias'));
     }
 }
