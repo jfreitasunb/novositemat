@@ -28,15 +28,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {   
-        $show_slides = True;
-
-        $show_noticias = True;
-
-        return view('layouts.app', compact('show_slides', 'show_noticias'));
-    }
-
+    
     public function getLangPortuguese()
     {
         App::setLocale('pt_BR');
@@ -47,9 +39,28 @@ class HomeController extends Controller
     }
 
     public function getLangEnglish()
-    {
+    {   
+        App::setLocale('en');
+
         Session::put('locale','en');
         
         return redirect()->back();
+    }
+
+    public function index()
+    {   
+        $locale = $locale = app()->getLocale();
+
+        $menu_principal = $this->menu_principal($locale);
+
+        $itens_dropdown = $this->itens_dropdown($locale);
+
+        $menu_lateral = $this->menu_lateral($locale);
+
+        $show_slides = $this->show_slides();
+
+        $show_noticias = $this->show_noticias();
+
+        return view('layouts.app', compact('menu_principal', 'itens_dropdown', 'menu_lateral', 'show_slides', 'show_noticias'));
     }
 }
