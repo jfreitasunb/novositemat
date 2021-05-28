@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Mews\Purifier\Purifier as PurifierPurifier;
 use Purifier;
 
-class MenuSiteController extends Controller
+class GCMenuSiteController extends Controller
 {
     public function __construct()
     {
