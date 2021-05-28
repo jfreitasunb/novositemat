@@ -8,8 +8,8 @@
 
     <hr class="style-two">
 </div>
-<div class="pl-6 pt-4 pr-4">
-    <p>{{ $dados }}</p>
+<div class="text-justify pl-6 pt-4 pr-4">
+    {!! $dados !!}
 </div>
  
 @endsection
