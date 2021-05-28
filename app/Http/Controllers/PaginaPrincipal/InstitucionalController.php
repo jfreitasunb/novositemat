@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\App;
 
 use App\Models\MenuSite;
 
+use App\Models\Institucional;
+
 use View;
 
 use Session;
@@ -43,7 +45,7 @@ class InstitucionalController extends Controller
 
         $menu_lateral = $this->menu_lateral($locale);
 
-        $dados = "temp";
+        $dados = Institucional::where('locale', $locale)->orderBy('updated_at', 'DESC')->get()->first()->institucional;
 
         $titulo_pagina = MenuSite::where('locale', $locale)->where('link', Route::currentRouteName())->where('ativo', True)->orderBy('ordem_menu')->get()->first()->nome_menu;
         
