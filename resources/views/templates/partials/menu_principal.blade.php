@@ -1,4 +1,3 @@
-
     <div class="flex items-center justify-center pb-6 relative text-azulMAT2">
         <nav class="relative flex flex-wrap items-center px-2 mb-3">
             <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
