@@ -10,7 +10,8 @@ use App\Http\Controllers\PaginaPrincipal\ContatoController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NovaSenhaController;
 use App\Http\Controllers\Auth\RecuperaSenhaController;
-use App\Http\Controllers\Admin\MenuSiteController;
+use App\Http\Controllers\Admin\GCMenuSiteController;
+use App\Http\Controllers\Admin\GCInstitucionalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,17 +43,19 @@ Route::prefix('/admin')->middleware('admin')->group(function () {
         return view('admin.gc');
     })->name('gc');
 
-    Route::get('/gc/menu/site', [MenuSiteController::class, 'index'])->name('menus.site');
+    Route::get('/gc/menu/site', [GCMenuSiteController::class, 'index'])->name('menus.site');
 
-    Route::post('/gc/menu/site', [MenuSiteController::class, 'cadastrar_menu']);
+    Route::post('/gc/menu/site', [GCMenuSiteController::class, 'cadastrar_menu']);
+
+    Route::get('/gc/conteudo/institucional', [GCInstitucionalController::class, 'index'])->name('conteudo.institucional');
+
+    Route::post('/gc/conteudo/institucional', [GCInstitucionalController::class, 'atualizar_conteudo_institucional']);
 });
 
-Route::get('/gc', [LoginController::class, 'index'])
-->name('login');
+Route::get('/gc', [LoginController::class, 'index'])->name('login');
 
 
-Route::get('/gc', [LoginController::class, 'index'])
-->name('login');
+Route::get('/gc', [LoginController::class, 'index'])->name('login');
 
 Route::post('/gc', [LoginController::class, 'logar']);
 
